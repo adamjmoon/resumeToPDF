@@ -1,0 +1,156 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-xs-6">
+        <h1>{{bio.firstName}} {{bio.lastName}}</h1>
+        <h3>{{bio.label}}</h3>
+        </div>
+        <div class="col-xs-6">
+          <div>&nbsp;</div>
+          {{#bio.phone.personal}}
+          <strong>Phone:</strong> {{bio.phone.personal}} <br />
+          {{/bio.phone.personal}}
+          {{#bio.email.personal}}
+          <strong>Email:</strong> {{bio.email.personal}}<br />
+          {{/bio.email.personal}}
+          {{#bio.profiles.twitter}}
+          <strong>Twitter:</strong> <a href="https://twitter.com/{{bio.profiles.twitter}}">@{{bio.profiles.twitter}}</a><br />
+          {{/bio.profiles.twitter}}
+          {{#bio.profiles.github}}
+          <strong>Github:</strong> <a href="https://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a><br />
+          {{/bio.profiles.github}}
+          {{#bio.profiles.linkedin}}
+          <strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/{{bio.profiles.linkedin}}">{{bio.profiles.linkedin}}</a><br />
+          {{/bio.profiles.linkedin}}
+        <!-- <img class="media-object img-circle pull-right" data-src="holder.js/64x64" alt="64x64" src="//www.gravatar.com/avatar/6e47c6fb701636270812a7e99cf708cc" style="width: 100px; height: 100px; margin-top: 20px;">-->
+        </div>
+      </div>
+      <hr style="color: #ccc; height: 4px;" />
+      <div class="row">
+        <header class="col-md-3">
+          <h2>About</h2>
+        </header>
+        </br>
+        <div class="col-md-9">
+          {{bio.summary}}
+        </div>
+      </div>
+      <hr style="color: #ccc; height: 4px;" />
+      {{#work.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h2>Work Experience</h2>
+        </header>
+        </br>
+        <div class="col-md-9">
+          <div class="skills">
+            {{#work}}
+            <h3>{{company}}</h3>
+            <strong>{{position}}</strong>
+            <p>{{startDateYear}} - {{endDateYear}}</p>
+            <p>{{summary}}</p>
+            <ul>
+              {{#highlights}}
+              <li>{{.}}</li>
+              {{/highlights}}
+            </ul>
+            <hr />{{/work}}
+          </div>
+        </div>
+      </section>
+      {{/work.length}}
+      {{#education.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h2>Education</h2>
+        </header>
+        <br/>
+        <div class="col-md-9">
+          <div class="skills">
+            {{#education}}
+            <h3>{{institution}}</h3>
+            <h4>{{area}}, {{studyType}}</h4>
+            <p>{{startDateYear}} - {{endDateYear}}</p>
+            <p>GPA - {{gpa}}</p>
+            <ul>
+              {{#highlights}}
+              <li>{{.}}</li>
+              {{/highlights}}
+            </ul>
+            <hr />
+            {{/education}}
+          </div>
+        </div>
+      </section>
+      {{/education.length}}
+      {{#skills.length}}
+
+      <section class="row">
+        <header class="col-md-3">
+          <h2>Skills</h2>
+        </header>
+        <br/>
+        <div class="col-md-9">
+          <div class="row-fluid skills">
+              {{#skills}}
+              <ul class="col-xs-2">
+                <li>
+                  <h4>{{name}}</h4>
+                  <ul>
+                    {{#keywords}}
+                    <li>{{.}}</li>
+                    {{/keywords}}
+                  </ul>
+                </li>
+              </ul>
+              {{/skills}}
+          </div>
+        </div>
+      </section>
+      {{/skills.length}}
+      {{#interests.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h2>Code Interests</h2>
+        </header>
+        <br/>
+        <div class="col-md-9">
+          <div class="row-fluid skills">
+            {{#interests}}
+            <ul class="col-xs-2">
+              <li>
+                <h4>{{name}}</h4>
+                <ul>
+                  {{#keywords}}
+                  <li>{{.}}</li>
+                  {{/keywords}}
+                </ul>
+              </li>
+            </ul>
+            {{/interests}}
+          </div>
+        </div>
+      </section>
+      {{/interests.length}}
+
+      {{#references.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>References</h3>
+        </header>
+        <div class="col-md-9">
+          <div class="row-fluid skills">
+            {{#references}}
+
+            <p>{{reference}} -
+              <strong>{{name}}</strong>
+            </p>
+            {{/references}}
+          </div>
+        </div>
+      </section>
+      {{/references.length}}
+    </div>
+  </div>
+</div>
